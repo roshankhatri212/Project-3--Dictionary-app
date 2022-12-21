@@ -16,11 +16,17 @@ const Header = ({input,setInput}) => {
   });
   return (
     <div className="header"> 
-    <span className="title">Word Finder</span>
+    <span className="title">{input ? input : 'Word Finder'} </span>
     <div className='inputs'>
       
       <ThemeProvider theme={darkTheme}>
-      <TextField id="standard-basic" label="Standard" variant="standard" />
+      <TextField 
+      className='search'
+      label="Search your word"
+        variant="standard"
+        value={input}
+        onChange={(e)=>{setInput(e.target.value)}}
+         />
       </ThemeProvider>
 </div>
 </div>
